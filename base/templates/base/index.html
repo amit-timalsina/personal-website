@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    <title>Amit Timalsina</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href = "{% static 'css/default.css' %}">
+    <link id="theme-style" rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+    <section class="s1">
+        <div class="main-container">
+            <div class="greeting-wrapper">
+                <h1>Hi, I'm Amit Timalsina</h1>
+            </div>
+
+            <div class="intro-wrapper">
+                {% include 'base/navbar.html' %}
+
+                <div class="left-column">
+                    <img src="{% static 'images/Amit.jpg' %}" id='profile_pic'>
+                    <h5 style="text-align:center; line-height: 0;">Personalize Theme</h5>
+
+                    <div id="theme-options-wrapper">
+                        <div class="theme-dot" data-mode="light" id="light-mode"></div>
+                        <div class="theme-dot" data-mode="blue" id="blue-mode"></div>
+                        <div class="theme-dot" data-mode="green" id="green-mode"></div>
+                        <div class="theme-dot" data-mode="purple" id="purple-mode"></div>
+                    </div>
+
+                    <p id="settings-note">*Theme settings will be saved for<br>your next visit</p>
+                </div>
+                <div class="right-column">
+                    <div id="preview-shadow">
+                        <div id="preview">
+                            <div id="corner-tl" class="corner"></div>
+                            <div class="corenr" id="corner-tr"></div>
+                            <h3>What I Do</h3>
+                            <p>I am the Founder and President of Young Scientists Community (YSC).</p>
+                            <div class="corner" id="corner-br"></div>
+                            <div class="corner" id="corner-bl"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </seciton>
+
+    <section class="s2">
+        <div class="main-container">
+            <div class="about-wrapper">
+                <div class="about-me">
+                    <h4>More about me</h4>
+                    <p>I am just another guy who is coding in his computer to surpass human intelligence.</p>
+                    <p>I love reading books. I am soon starting to prepare web and video content for free.</p>
+                    <hr>
+                    <h4>TOP EXPERTISE</h4>
+                    <p>Machine Learning and Deep Learning practioner: <a target="_blank" href="{% static 'resume.pdf' %}">Download Resume</a></p>
+
+                    <div id="skills">
+                        <ul>
+                            <li>Python</li>
+                            <li>Django</li>
+                            <li>Angular</li>
+                            <li>Machine Learning</li>
+                            <li>Deep Learning</li>
+                        </ul>
+                        <ul>
+                            <li>Numpy</li>
+                            <li>Pandas</li>
+                            <li>Matplotlib</li>
+                            <li>TensorFlow + Keras</li>
+                            <li>Sckit Learn</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <img id="social-img" src="{% static 'images/follow.jpg' %}">
+                    <h3>Find me on linkedin and Github</h3>
+
+                    <a target="_blank" href="https://www.linkedin.com/in/amittimalsina/">Linkedin: @amittimalsina</a>
+                    <a target="_blank" href="https://www.github.com/amit-timalsina/">Github: @amit-timalsina</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        let static = "{% static 'css' %}"
+    </script>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
