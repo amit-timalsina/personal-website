@@ -74,8 +74,11 @@ h6 { font-size: 16px;}
 
 
 .main-container{
-	width: 1200px;
-	margin: 0 auto;
+	max-width: 1140px;
+	padding-right: 0.95rem;
+	padding-left: 0.95rem;
+	margin-right:  auto;
+	margin-left: auto;
 }
 
 

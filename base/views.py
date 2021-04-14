@@ -98,6 +98,9 @@ def deletePost(request, slug):
     context = {'item': post}
     return render(request, 'base/delete.html')
 
+def contact(request):
+    return render(request, 'base/contact.html')
+
 def sendEmail(request):
     if request.method == 'POST':
         template = render_to_string('base/email_template.html', {
@@ -117,6 +120,7 @@ def sendEmail(request):
     email.send()
     
     return render(request, 'base/email_sent.html')
+
 
 
 def registerPage(request):

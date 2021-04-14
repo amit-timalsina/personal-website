@@ -1,0 +1,31 @@
+{% extends 'base/navbar.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div style="padding: 70px 170px 50px;">
+        <h1>Get in touch with me</h1>
+        <form class="row g-3" method="POST" action="{% url 'send_email' %}">
+            {% csrf_token %}
+            <div class="col-md-6">
+                <label for='name' class="form-label">Name</label>
+                <input required class="form-control" type="text" id="name" name="name">
+                </div>
+                <div class="col-md-6">
+                    <label for='email' class="form-label">Email</label>
+                    <input required class="form-control" type="email" id="email" name="email">
+                </div>
+                <div class="col-12">
+                    <label for='subject' class="form-label">Subject</label>
+                    <input required class="form-control" type="text" name="subject" id="subject">
+                </div>
+                <div class="col-12">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea required class="form-control" name="message" id="message"></textarea>
+                </div>
+                <div class="col-12 mt-3">
+                    <input class="btn btn-primary px-3 py-2" type="submit" value="Send">
+                </div>
+        </form>
+    </div>
+</div>
+{% endblock content%}
