@@ -2,13 +2,27 @@
 {% load static %}
 {% block content %}
 <div class="container">
-    <div style="padding: 70px 170px 50px;">
-        <h1>Get in touch with me</h1>
-        <form class="row g-3" method="POST" action="{% url 'send_email' %}">
-            {% csrf_token %}
-            <div class="col-md-6">
-                <label for='name' class="form-label">Name</label>
-                <input required class="form-control" type="text" id="name" name="name">
+    <div class="row" style="margin-top: 5em;">
+        <div class="col"></div>
+        <div class="col-sm-7" style="text-align: center;">
+            <p class="suphead">Contact</p>
+            <h1 class= 'h11' style="color: #000; font-size: 55px; font-weight: bolder; text-transform: uppercase; line-height: 1em; margin: 0.7em 0; font-family: 'Titillium Web'; ">Hit me up</h1>
+            <p class="para-intro">Say hey, hello, what's up, or something!</p>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row" style="margin-top: 5em;">
+        <div class="col-2"></div>
+        <div class="col-sm-3 col-md-4">
+            <p style="line-height: 1.7em;">Feel free to drop any feedback, suggestions, or questions. I am always open to discussing new projects, creative ideas, and opportunities.</p>
+            <p style="line-height: 1.7em; margin-top: 1em;">If you want to report bugs, typos, grammatical errors, or any other types of inaccuracies in the blog, please open an issue <a target="_blank" href="https://github.com/amit-timalsina/personal-website/issues/new" style="text-decoration: none; color: #000; font-weight: bold;">here</a>.</p>
+        </div>
+        <div class="col-sm-5">
+            <form class="row g-3" method="POST" action="{% url 'send_email' %}">
+                {% csrf_token %}
+                <div class="col-md-6">
+                    <label for='name' class="form-label">Name</label>
+                    <input required class="form-control" type="text" id="name" name="name">
                 </div>
                 <div class="col-md-6">
                     <label for='email' class="form-label">Email</label>
@@ -23,9 +37,12 @@
                     <textarea required class="form-control" name="message" id="message"></textarea>
                 </div>
                 <div class="col-12 mt-3">
-                    <input class="btn btn-primary px-3 py-2" type="submit" value="Send">
+                    <input class="btn btn-dark px-3 py-2" type="submit" value="Send">
                 </div>
-        </form>
+            </form>
+        </div>
+        <div class="col"></div>
     </div>
+    <div class="row">a</div>
 </div>
 {% endblock content%}

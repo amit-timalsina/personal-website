@@ -121,7 +121,8 @@ def sendEmail(request):
     
     return render(request, 'base/email_sent.html')
 
-
+def about(request):
+    return render(request, 'base/about.html')
 
 def registerPage(request):
     return render(request, 'base/post_form.html')
