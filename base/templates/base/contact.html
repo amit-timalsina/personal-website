@@ -22,27 +22,26 @@
                 {% csrf_token %}
                 <div class="col-md-6">
                     <label for='name' class="form-label">Name</label>
-                    <input required class="form-control" type="text" id="name" name="name">
+                    <input required class="a form-control" type="text" id="name" name="name">
                 </div>
                 <div class="col-md-6">
                     <label for='email' class="form-label">Email</label>
-                    <input required class="form-control" type="email" id="email" name="email">
+                    <input required class="a form-control" type="email" id="email" name="email">
                 </div>
                 <div class="col-12">
                     <label for='subject' class="form-label">Subject</label>
-                    <input required class="form-control" type="text" name="subject" id="subject">
+                    <input required class="a form-control" type="text" name="subject" id="subject">
                 </div>
                 <div class="col-12">
                     <label for="message" class="form-label">Message</label>
-                    <textarea required class="form-control" name="message" id="message"></textarea>
+                    <textarea required class="a form-control" name="message" id="message"></textarea>
                 </div>
                 <div class="col-12 mt-3">
-                    <input class="btn btn-dark px-3 py-2" type="submit" value="Send">
+                    <input class="btn btn-dark" style="font-family: 'Titillium Web'; text-transform: uppercase; " type="submit" value="Send Message">
                 </div>
             </form>
         </div>
         <div class="col"></div>
     </div>
-    <div class="row">a</div>
 </div>
 {% endblock content%}

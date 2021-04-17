@@ -2173,7 +2173,11 @@ progress {
   font-size: 0.875em;
   color: #6c757d;
 }
-
+.a{
+  border: 0px !important;
+  border-bottom: 4px solid #000 !important;
+  border-radius: 0 !important;
+}
 .form-control {
   display: block;
   width: 100%;
@@ -2190,6 +2194,14 @@ progress {
   appearance: none;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.a:focus{
+  border-radius: 0.25em !important;
+  color: #212529;
+  background-color: #fff;
+  border-color: #f80000 !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.08rem rgba(0, 102, 255, 0.829) !important;
 }
 @media (prefers-reduced-motion: reduce) {
   .form-control {
@@ -3152,13 +3164,18 @@ textarea.form-control-lg {
 
 .btn-dark {
   color: #fff;
-  background-color: #212529;
-  border-color: #212529;
+  background-color: #000000;
+  border-color: #000000;
+  border-radius: 0;
+  padding: 18px 20px !important;
+  border: 2px solid #000;
+  font-size: 13px;
+  letter-spacing: 1.1px;
+  line-height: 1;
 }
 .btn-dark:hover {
-  color: #fff;
-  background-color: #1c1f23;
-  border-color: #1a1e21;
+  color: #000;
+  background-color: #ffffff;
 }
 .btn-check:focus + .btn-dark, .btn-dark:focus {
   color: #fff;
