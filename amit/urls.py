@@ -18,9 +18,12 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
+from blog.views import post
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('base.urls')),
+    path('blog/', include('blog.urls')),
+    path('blog/<slug:slug>', post, name='post'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 

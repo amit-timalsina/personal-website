@@ -1,0 +1,6 @@
+{
+    "zenMode.hideTabs": false,
+    "workbench.settings.openDefaultSettings": true,
+    "workbench.editor.scrollToSwitchTabs": true,
+    "workbench.editor.enablePreviewFromCodeNavigation": true
+}
