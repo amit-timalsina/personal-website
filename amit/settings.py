@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     'base.apps.BaseConfig',
     'blog.apps.BlogConfig',
+    'tinymce',
+    # 'search',
     'ckeditor',
     'ckeditor_uploader',
     'crispy_forms'
@@ -153,7 +155,6 @@ CKEDITOR_CONFIGS = {
         'width': '100%',
     }
 }
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

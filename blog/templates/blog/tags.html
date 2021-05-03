@@ -1,0 +1,25 @@
+{% extends 'blog/main.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for tag in tags %}
+            <a href="{% url 'tag' tag.slug %}" class="btn btn-dark">{{ tag.name }}</a>
+        {% endfor %}
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+            <div class="container py-3">
+                <h2 class="heading">Search feature only works in blog page.</h2>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

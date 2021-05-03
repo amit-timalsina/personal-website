@@ -24,6 +24,8 @@ urlpatterns = [
     path('', include('base.urls')),
     path('blog/', include('blog.urls')),
     path('blog/<slug:slug>', post, name='post'),
+    # path('search/', include('search.urls')),
+    path('tinymce/', include('tinymce.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 

@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .decorators import *
 from django.conf import settings
+import readtime
 
 from .models import *
 from .forms import PostForm
@@ -16,7 +17,7 @@ def posts(request):
     trending_posts = Post.objects.filter(trending=True)
     myFilter = PostFilter(request.GET, queryset=posts)
     posts = myFilter.qs
-
+    trending_posts = myFilter.qs
     page = request.GET.get('page')
 
     paginator = Paginator(posts, 5)
@@ -33,11 +34,16 @@ def posts(request):
 
 def post(request, slug):
     post = Post.objects.get(slug=slug)
-
+    related_posts = []
+    for tag in post.tags.all():
+        related_post = Post.objects.filter(tags__name = tag)
+        related_posts.append(related_post)
     # Comment section
     if request.method == 'POST':
         PostComment.objects.create(
-            author=request.user.profile,
+            name=request.POST['name'],
+            email=request.POST['email'],
+            website=request.POST['website'],
             post=post,
             body=request.POST['comment']
         )
@@ -45,10 +51,19 @@ def post(request, slug):
         
         return redirect('post', slug=post.slug)
 
-    context = {'post': post}
+    context = {'post': post, 'related_posts': related_posts}
     return render(request, 'blog/post.html', context)
 
+def tags(request):
+    tags = Tag.objects.all()
+    context = {'tags': tags}
+    return render(request, 'blog/tags.html', context)
 
+def tagPage(request, tag):
+    tag_posts = Post.objects.filter(tags__slug=tag)
+    tag = Tag.objects.get(slug=tag)
+    context = {'posts': tag_posts, 'tag': tag}
+    return render(request, 'blog/tag.html', context)
 
 
 # CRUD VIEWS

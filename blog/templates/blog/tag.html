@@ -1,0 +1,136 @@
+{% extends 'blog/main.html' %}
+{% load static %}
+{% load readtime %}
+{% block content %}
+<div class="section pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 py-3" style="border-bottom: 1px solid rgba(0, 0, 0, 0.145);">
+                <h2 class="heading my-0" style="font-size: 3rem; text-transform: lowercase;">#{{tag.slug}}</h2>
+                <p class="post-card-text my-3" style="font-size: 1.3rem; line-height: 25.6px;">A collection of {{ posts.count }} post</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+        {% for post in posts reversed %}
+        {% if posts.count >= 3 %}
+        <div class="col-md-6 col-lg-4 pt-5 pb-5" style="border-bottom: 1px solid rgba(0, 0, 0, 0.145);">
+            <div class="post-entry d-block">
+                <div class="thumbnail pb-4">
+                    <a href="{% url 'post' post.slug %}">
+                        <img class="img-fluid" src="{{ post.thumbnail.url }}" alt="Image" style="height: 17em;">
+                    </a>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col" style="padding-right: 0; margin-bottom: 0.2em;">
+                           
+                            {% for tag in post.tags.all|slice:":1" %}
+                            <a class="tag" href="{% url 'tag' tag.slug %}">
+                            {{tag}}
+                            </a>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h2 class="post-card-title" style="font-size: 1.6rem; line-height: 1em;"><a href="{% url 'post' post.slug %}" style="text-decoration: none; color: inherit;">{{ post.headline }}</a></h1>
+                    </div>
+                    <div class="row">
+                        <p class="post-card-text" style="font-size: 1rem; line-height: 25.6px;">
+                            {{ post.sub_headline }}
+                        </p>
+                    </div>
+                    <div class="row">
+                        <span style="color: rgba(0, 0, 0, 0.665); font-size: 0.9rem;">{{ post.created|date:"d M Y" }}<span style="padding: 3px;">•</span>{{ post.body|readtime }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% elif posts.count == 2 %}
+        <div class="col-md-6 col-lg-6 pt-5 pb-5" style="border-bottom: 1px solid rgba(0, 0, 0, 0.145);">
+            <div class="post-entry d-block">
+                <div class="thumbnail pb-4">
+                    <a href="{% url 'post' post.slug %}">
+                        <img class="img-fluid" src="{{ post.thumbnail.url }}" alt="Image" style="height: 20em; width: 100%;">
+                    </a>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col" style="padding-right: 0; margin-bottom: 0.2em;">
+                           
+                            {% for tag in post.tags.all|slice:":1" %}
+                            <a class="tag" href="{% url 'tag' tag.slug %}">
+                            {{tag}}
+                            </a>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h2 class="post-card-title" style="font-size: 1.6rem; line-height: 1em;"><a href="{% url 'post' post.slug %}" style="text-decoration: none; color: inherit;">{{ post.headline }}</a></h1>
+                    </div>
+                    <div class="row">
+                        <p class="post-card-text" style="font-size: 1.1rem; line-height: 25.6px;">
+                            {{ post.sub_headline }}
+                        </p>
+                    </div>
+                    <div class="row">
+                        <span style="color: rgba(0, 0, 0, 0.576);">{{ post.created|date:"d M Y" }}<span style="padding: 3px;">•</span>{{ post.body|readtime }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col-md-6 col-lg-10 pt-5 pb-5" style="border-bottom: 1px solid rgba(0, 0, 0, 0.145);">
+            <div class="post-entry d-block">
+                <div class="thumbnail pb-4">
+                    <a href="{% url 'post' post.slug %}">
+                        <img class="img-fluid" src="{{ post.thumbnail.url }}" alt="Image" style="width: 100%; height: 20em;">
+                    </a>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col" style="padding-right: 0; margin-bottom: 0.2em;">
+                           
+                            {% for tag in post.tags.all|slice:":1" %}
+                            <a class="tag" href="{% url 'tag' tag.slug %}">
+                            {{tag}}
+                            </a>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h2 class="post-card-title" style="font-size: 1.6rem; line-height: 1em;"><a href="{% url 'post' post.slug %}" style="text-decoration: none; color: inherit;">{{ post.headline }}</a></h1>
+                    </div>
+                    <div class="row">
+                        <p class="post-card-text" style="font-size: 1.1rem; line-height: 25.6px;">
+                            {{ post.sub_headline }}
+                        </p>
+                    </div>
+                    <div class="row">
+                        <span style="color: rgba(0, 0, 0, 0.576);">{{ post.created|date:"d M Y" }}<span style="padding: 3px;">•</span>{{ post.body|readtime }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+            <div class="container py-3">
+                <h2 class="heading">Search feature only works in blog page.</h2>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

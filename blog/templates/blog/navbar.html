@@ -13,39 +13,102 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Buda:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="container" style="border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
-        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
-            <div class="container-fluid" style="padding: 0;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid justify-content-between">
               <!-- <a class="navbar-brand" href="{% url 'home' %}" style="font-family: 'Ubuntu'; font-weight: 400; font-size: 1.7rem; line-height: 36px;">amit<span style="font-weight: bold;">t</span>imalsina</a> -->
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              </button> -->
+                <!-- left elements -->
+              <!-- <div class="collapse navbar-collapse" id="navbarText"> -->
+                <ul class="navbar-nav flex-row d-none d-md-flex">
                     <li class="nav-item">
-                        <a class="nav-link" style="padding: 0.5rem 0.6rem" href="{% url 'posts' %}">Home</a>
+                        <a class="nav-link" style="padding: 0.5rem 0.6rem" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" style="padding: 0.5rem 0.6rem" href="{% url 'posts' %}">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="padding: 0.5rem 0.6rem" href="{% url 'about' %}">about</a>
+                        <a class="nav-link" style="padding: 0.5rem 0.6rem" href="{% url 'tags' %}">tags</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="padding: 0.5rem 0.6rem" href="{% url 'contact' %}">contact</a>
+                        <a class="nav-link" style="padding: 0.5rem 0.6rem" href="{% url 'about' %}">about</a>
                     </li>
                 </ul>
-                <a class="navbar-brand" href="{% url 'home' %}" style="font-family: 'Ubuntu'; font-weight: 400; font-size: 1.7rem; line-height: 50px;">amit<span style="font-weight: bold;">Blogs</span></a>
+                <!-- <a class="navbar-brand" href="{% url 'home' %}" style="font-family: 'Ubuntu'; font-weight: 400; font-size: 1.7rem; line-height: 50px;">amit<span style="font-weight: bold;">Blogs</span></a>
                 <div class="row navbar-text" style="margin-left: 14.7em; margin-right: 1em">
+                    <div class="col"><button type="button" class="btn p-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="bi bi-search"></i>
+                    </button></div>
                     <div class="col"><a target="_blank" href="https://github.com/amit-timalsina"><i class="bi bi-github"></i></a></div>
                     <div class="col"><a target="_blank" href="https://www.linkedin.com/in/amittimalsina/"><i class="bi bi-linkedin"></i></a></div>
                     <div class="col"><a target="_blank" href="https://www.facebook.com/ProgrammerAmit"><i class="bi bi-facebook"></i></a></div>
-                </div>
-                <button type="button" class="btn btn-outline-dark">Subscribe</button>
+                </div> -->
+                <!-- <button type="button" class="btn btn-outline-dark">Subscribe</button> -->
+              <!-- </div> -->
+<!-- left elements -->
+
+<!-- center elements -->
+              <div class="d-md-flex">  
+                <a class="navbar-brand ms-0 me-5 mb-1 d-flex align-items-center" href="#">
+                    amit<span style="font-weight: bold;">Blogs</span>
+                </a>
               </div>
+              <ul class="navbar-nav flex-row d-flex d-md-none">
+                <li class="nav-item">
+                    <a class="nav-link" style="padding: 0.4rem 0.5rem" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="padding: 0.4rem 0.5rem" href="{% url 'posts' %}">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="padding: 0.4rem 0.5rem" href="{% url 'tags' %}">tags</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">about</a>
+                </li> -->
+            </ul>
+<!-- center elements -->
+
+<!-- right elements -->
+              <ul class="navbar-nav flex-row d-none d-md-flex">
+                <li class="nav-item me-3 me-lg-1 list-unstyled active">
+                    <button type="button" class="btn fs-5" data-bs-toggle="modal" data-bs-target="#exampleModal" style="padding: 0.4rem 1rem; padding-left: 10px; padding-right: 10px;">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </li>
+                
+                <li class="nav-item me-3 me-lg-1 list-unstyled">
+                    <a class="nav-link fs-5" target="_blank" href="#">
+                        <span><i class="bi bi-github"></i></span>
+                    </a>
+                </li>
+
+                <li class="nav-item me-3 me-lg-1 list-unstyled">
+                    <a class="nav-link fs-5" target="_blank" href="#">
+                        <span><i class="bi bi-linkedin"></i></span>
+                    </a>
+                </li>
+
+                <li class="nav-item me-3 me-lg-1 list-unstyled">
+                    <a class="nav-link fs-5" target="_blank" href="#">
+                        <span><i class="bi bi-facebook"></i></span>
+                    </a>
+                </li>
+
+              </ul>
+              <ul class="navbar-nav flex-row d-flex d-md-none">
+                <li class="nav-item me-3 me-lg-1 list-unstyled active">
+                    <button type="button" class="btn p-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </li>
+              </ul>
             </div>
           </nav>
     </div>
