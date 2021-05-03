@@ -1,0 +1,1 @@
+web: gunicorn amit.wsgi --log-file -
