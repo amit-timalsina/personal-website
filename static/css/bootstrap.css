@@ -2131,13 +2131,6 @@ progress {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-  .para-intro{
-    font-size: 25px;
-    margin-bottom: 0;
-  }
-  .h11{
-    font-size: 48px  !important;
-  }
   .navbar-brand{
     margin-left: 0 !important;
   }
@@ -2152,6 +2145,14 @@ progress {
   .table-responsive-lg {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+  .para-intro{
+    font-size: 15px;
+    margin-bottom: 0;
+    line-height: 30px;
+  }
+  .h11{
+    font-size: 48px  !important;
   }
 }
 @media (max-width: 1199.98px) {
@@ -7318,7 +7319,7 @@ textarea.form-control-lg {
 }
 
 .fs-5 {
-  font-size: 1.05rem !important;
+  font-size: 1.1rem !important;
 }
 
 .fs-6 {
@@ -10939,7 +10940,12 @@ textarea.form-control-lg {
     margin-left: 0 !important;
     padding: 0 1.5em;
   }
+  .section .heading{
+    font-size: 40px !important;
+    font-weight: 700;
+  }
 }
+
 
 .post-section .author-pic{
   width: 70px;

@@ -25,7 +25,7 @@ class Tag(models.Model):
 
 
 class Post(models.Model):
-    # name = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, blank=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
     headline = models.CharField(max_length=200)
     sub_headline = models.CharField(max_length=200, null=True, blank=True)
     thumbnail = models.ImageField(null=True, blank=True, upload_to='images', default='/images/placeholder.png')
