@@ -141,6 +141,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+MAILCHIMP_API_KEY = '758881d127fc6648ee3c29d445a574b3-us1'
+MAILCHIMP_DATA_CENTER = 'us1'
+MAILCHIMP_EMAIL_LIST_ID = 'ffd4704f6a'
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -161,3 +165,4 @@ CKEDITOR_CONFIGS = {
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

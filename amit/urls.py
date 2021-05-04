@@ -18,13 +18,14 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
-from blog.views import post
+from blog.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('base.urls')),
     path('blog/', include('blog.urls')),
     path('blog/<slug:slug>', post, name='post'),
     # path('search/', include('search.urls')),
+    path('subscribe/', email_list_signup, name='subscribe'),
     path('tinymce/', include('tinymce.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
