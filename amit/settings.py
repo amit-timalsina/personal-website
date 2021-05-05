@@ -156,6 +156,7 @@ CKEDITOR_UPLOAD_PATH = 'static/images/uploads/'
 
 CKEDITOR_CONFIGS = {
     'default': {
+        'extraPlugins': 'codesnippet',
         'toolbar': 'full',
         'height': 300,
         'width': '100%',

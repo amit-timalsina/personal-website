@@ -138,9 +138,12 @@ def updatePost(request, slug):
 
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES, instance=post)
-        if form.is_valid:
+        if form.is_valid():
             form.save()
-        return redirect('posts')
+            return redirect('posts')
+        else:
+            messages.info(request, "There is an error while updating")
+        
     
     context = {'form': form}
     return render(request, 'blog/post_form.html', context)
