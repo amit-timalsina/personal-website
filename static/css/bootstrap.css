@@ -10940,9 +10940,8 @@ textarea.form-control-lg {
     margin-left: 0 !important;
     padding: 0 1.5em;
   }
-  .section .heading{
-    font-size: 40px !important;
-    font-weight: 700;
+  .post-section .heading{
+    font-size: 33px !important;
   }
 }
 

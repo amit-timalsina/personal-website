@@ -50,7 +50,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-sm-8 justify-content-center">
                 <div class="text-center">
-                    <img src="{% static 'images/Amit.jpg' %}" alt="Image" class="author-pic img-fluid rounded-circle mx-auto">
+                    <img src="{% static 'images/Amit.jpg' %}" alt="Image" class="author-pic rounded-circle mx-auto">
                 </div>
                 <span class="d-block text-center" style="font-size: 1.3rem; color: rgb(105, 105, 105);">{{ post.author.get_full_name }}</span>
                 <span class="date d-block text-center small text-uppercase text-black-50 mb-5 fs-5">{{ post.created|date:"d M Y" }}</span>
@@ -140,7 +140,7 @@
     <div class="container">
         <div class="row justify-content-center px-2">
             <div class="col-lg-11">
-                <h2 class="heading m-0" style="font-size: 3rem;">Related</h2>
+                <h2 class="m-0" style="font-size: 3rem; font-weight: 700;">Related</h2>
             </div>
         </div>
         {% for related_post in related_posts %}
