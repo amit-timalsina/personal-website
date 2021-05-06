@@ -10980,3 +10980,6 @@ textarea.form-control-lg {
   font-size: 40px;
   font-weight: 700;
 }
+.heading_url:hover{
+text-decoration: underline !important;
+}
