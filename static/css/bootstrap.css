@@ -8628,6 +8628,10 @@ textarea.form-control-lg {
   .mt-md-5 {
     margin-top: 3rem !important;
   }
+  
+  .mt-md-6{
+    margin-top: 4rem !important;
+  }
 
   .mt-md-auto {
     margin-top: auto !important;

@@ -41,9 +41,11 @@
 
             {% if request.user.is_staff %}
             <div class="row mb-5 mt-0">
+                <div>
                 <a class="btn btn-sm btn-primary" href="{% url 'posts' %}">&laquo Back to Posts</a>
                 <a class="btn btn-sm btn-primary" href="{% url 'update_post' post.slug %}">Edit</a>
                 <a class="btn btn-sm btn-primary" href="{% url 'delete_post' post.slug %}">Delete</a>
+                </div>
             </div>
             {% endif %}
 
@@ -53,7 +55,7 @@
                     <img src="{% static 'images/Amit.jpg' %}" alt="Image" class="author-pic rounded-circle mx-auto">
                 </div>
                 <span class="d-block text-center" style="font-size: 1.3rem; color: rgb(105, 105, 105);">{{ post.author.get_full_name }}</span>
-                <span class="date d-block text-center small text-uppercase text-black-50 mb-5 fs-5">{{ post.created|date:"d M Y" }}</span>
+                <span class="date d-block text-center small text-uppercase text-black-50 mb-4 fs-5">{{ post.created|date:"d M Y" }}</span>
                 <div class="text-center">
                     <ul class="navbar-nav flex-row d-none d-md-flex justify-content-center">
                         {% for tag in post.tags.all %}

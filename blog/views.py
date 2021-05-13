@@ -67,7 +67,7 @@ def posts(request):
     trending_posts = myFilter.qs
     page = request.GET.get('page')
 
-    paginator = Paginator(posts, 5)
+    paginator = Paginator(posts,6)
 
     try:
         posts = paginator.page(page)
@@ -104,13 +104,15 @@ def post(request, slug):
 
 def tags(request):
     tags = Tag.objects.all()
-    context = {'tags': tags}
+    form = EmailSignupForm()
+    context = {'tags': tags, 'form': form}
     return render(request, 'blog/tags.html', context)
 
 def tagPage(request, tag):
     tag_posts = Post.objects.filter(tags__slug=tag)
     tag = Tag.objects.get(slug=tag)
-    context = {'posts': tag_posts, 'tag': tag}
+    form = EmailSignupForm()
+    context = {'posts': tag_posts, 'tag': tag, 'form': form}
     return render(request, 'blog/tag.html', context)
 
 
