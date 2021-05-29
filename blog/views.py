@@ -65,16 +65,16 @@ def posts(request):
     form = EmailSignupForm()
     posts = myFilter.qs
     trending_posts = myFilter.qs
-    page = request.GET.get('page')
+    # page = request.GET.get('page')
 
-    paginator = Paginator(posts,6)
+    # paginator = Paginator(posts, 10)
 
-    try:
-        posts = paginator.page(page)
-    except PageNotAnInteger:
-        posts = paginator.page(1)
-    except EmptyPage:
-        posts = paginator.page(paginator.num_pages)
+    # try:
+    #     posts = paginator.page(page)
+    # except PageNotAnInteger:
+    #     posts = paginator.page(1)
+    # except EmptyPage:
+    #     posts = paginator.page(paginator.num_pages)
     
     context = {'posts': posts, 'trending_posts': trending_posts, 'myFilter': myFilter, 'form': form}
     return render(request, 'blog/blog.html', context)
